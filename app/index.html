@@ -1,0 +1,172 @@
+<!doctype html>
+<!--
+ ██╗  ██╗██████╗ ███╗   ███╗███████╗ █████╗ ██╗
+ ██║  ██║██╔══██╗████╗ ████║██╔════╝██╔══██╗██║
+ ███████║██║  ██║██╔████╔██║█████╗  ███████║██║
+ ██╔══██║██║  ██║██║╚██╔╝██║██╔══╝  ██╔══██║██║
+ ██║  ██║██████╔╝██║ ╚═╝ ██║███████╗██║  ██║███████╗
+ ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+ Copyright 2019-2020, Hyungyo Seo
+-->
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>흥덕고 급식</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./libs/spoqa-han-sans/SpoqaHanSans-kr.css" crossorigin="anonymous">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div id="yesterday">
+                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+
+                    <div class="card-group m-2">
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="menuTitle" class="card-title">급식</h5>
+                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
+                                  </div>
+                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
+                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="today">
+                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+
+                    <div class="card-group m-2">
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="menuTitle" class="card-title">급식</h5>
+                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
+                                  </div>
+                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
+                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="tomorrow">
+                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+
+                    <div class="card-group m-2">
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="menuTitle" class="card-title">급식</h5>
+                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
+                                  </div>
+                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
+                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교</p>
+
+        <!-- 네비게이션 지정 -->
+        <div class="swiper-button swiper-button-next"></div>
+        <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+        <div class="swiper-button swiper-button-prev"></div>
+        <!-- 이전 버튼 -->
+    </div>
+    <script src="./libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./libs/swiper/swiper.min.css" crossorigin="anonymous">
+    <script src="./libs/swiper/swiper.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./libs/sweetalert2/swal.css">
+    <script src="./libs/sweetalert2/sweetalert2.all.min.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+ ██╗  ██╗██████╗ ███╗   ███╗███████╗ █████╗ ██╗
+ ██║  ██║██╔══██╗████╗ ████║██╔════╝██╔══██╗██║
+ ███████║██║  ██║██╔████╔██║█████╗  ███████║██║
+ ██╔══██║██║  ██║██║╚██╔╝██║██╔══╝  ██╔══██║██║
+ ██║  ██║██████╔╝██║ ╚═╝ ██║███████╗██║  ██║███████╗
+ ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+ Copyright 2019-2020, Hyungyo Seo
+-->
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>설정</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../libs/spoqa-han-sans/SpoqaHanSans-kr.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="text-center">
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="form">
+      <a href="javascript:history.back()" class="h5 font-weight-norm m-4 position-fixed" id="back">< 돌아가기</a>
+        <h1 class="h3 mb-4 font-weight-normal">설정</h1>
+        <div id="contents">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons" id="selGroup" style="width:100%;">
+                <select class="custom-select" id="grade">
+                    <option value="1학년">1</option>
+                    <option value="2학년">2</option>
+                    <option value="3학년">3</option>
+                </select>
+                <div class="input-group-append">
+                    <label class="input-group-text" for="btnGroup">학년</label>
+                </div>
+                <select class="custom-select" id="class">
+                </select>
+                <div class="input-group-append">
+                    <label class="input-group-text" for="btnGroup">반</label>
+                </div>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="save" disabled>저장</button>
+            <button class="btn btn-block textOnly" type="button" id="delete" disabled>삭제</button>
+        </div>
+        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교</p>
+    </div>
+    <script src="../libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="../libs/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../libs/sweetalert2/swal.css">
+    <script src="../libs/sweetalert2/sweetalert2.all.min.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
