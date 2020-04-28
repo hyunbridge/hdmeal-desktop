@@ -6,6 +6,7 @@ function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: '흥덕고 급식',
+    frame: false,
     width: 1200,
     height: 800,
     minWidth: 400,
@@ -13,7 +14,8 @@ function createWindow () {
     backgroundColor: '#f5f5f5',
     icon: path.join(__dirname, 'assets/icons/png/icon.png'),
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
     }
   })
 

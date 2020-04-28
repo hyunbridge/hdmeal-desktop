@@ -35,16 +35,46 @@
         }
     </style>
     <!-- Custom styles for this template -->
+    <link href="./assets/controls/style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-  </div>
+    <header id="titlebar">
+        <div id="drag-region">
+
+            <div id="window-controls">
+
+                <div class="button" id="min-button">
+                    <img class="icon"
+                        srcset="./assets/controls/min-w-10.png 1x, ./assets/controls/min-w-12.png 1.25x, ./assets/controls/min-w-15.png 1.5x, ./assets/controls/min-w-15.png 1.75x, ./assets/controls/min-w-20.png 2x, ./assets/controls/min-w-20.png 2.25x, ./assets/controls/min-w-24.png 2.5x, ./assets/controls/min-w-30.png 3x, ./assets/controls/min-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+                <div class="button" id="max-button">
+                    <img class="icon"
+                        srcset="./assets/controls/max-w-10.png 1x, ./assets/controls/max-w-12.png 1.25x, ./assets/controls/max-w-15.png 1.5x, ./assets/controls/max-w-15.png 1.75x, ./assets/controls/max-w-20.png 2x, ./assets/controls/max-w-20.png 2.25x, ./assets/controls/max-w-24.png 2.5x, ./assets/controls/max-w-30.png 3x, ./assets/controls/max-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+                <div class="button" id="restore-button">
+                    <img class="icon"
+                        srcset="./assets/controls/restore-w-10.png 1x, ./assets/controls/restore-w-12.png 1.25x, ./assets/controls/restore-w-15.png 1.5x, ./assets/controls/restore-w-15.png 1.75x, ./assets/controls/restore-w-20.png 2x, ./assets/controls/restore-w-20.png 2.25x, ./assets/controls/restore-w-24.png 2.5x, ./assets/controls/restore-w-30.png 3x, ./assets/controls/restore-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+                <div class="button" id="close-button">
+                    <img class="icon"
+                        srcset="./assets/controls/close-w-10.png 1x, ./assets/controls/close-w-12.png 1.25x, ./assets/controls/close-w-15.png 1.5x, ./assets/controls/close-w-15.png 1.75x, ./assets/controls/close-w-20.png 2x, ./assets/controls/close-w-20.png 2.25x, ./assets/controls/close-w-24.png 2.5x, ./assets/controls/close-w-30.png 3x, ./assets/controls/close-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -63,10 +93,10 @@
                         <div class="col-lg">
                             <div class="card m-2">
                                 <div class="card-body">
-                                  <div class="row">
-                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
-                                  </div>
+                                    <div class="row">
+                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
+                                    </div>
                                     <ul id="ttBody" class="card-text">불러오는 중...</ul>
                                 </div>
                             </div>
@@ -99,10 +129,10 @@
                         <div class="col-lg">
                             <div class="card m-2">
                                 <div class="card-body">
-                                  <div class="row">
-                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
-                                  </div>
+                                    <div class="row">
+                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
+                                    </div>
                                     <ul id="ttBody" class="card-text">불러오는 중...</ul>
                                 </div>
                             </div>
@@ -134,10 +164,10 @@
                         <div class="col-lg">
                             <div class="card m-2">
                                 <div class="card-body">
-                                  <div class="row">
-                                    <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                    <a href="./settings/index.html" class="col-3 text-right">설정</a>
-                                  </div>
+                                    <div class="row">
+                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
+                                    </div>
                                     <ul id="ttBody" class="card-text">불러오는 중...</ul>
                                 </div>
                             </div>
@@ -162,11 +192,43 @@
         <div class="swiper-button swiper-button-prev"></div>
         <!-- 이전 버튼 -->
     </div>
+    <div id="settingsModal">
+        <div class="btn-group btn-group-toggle m-3" data-toggle="buttons" id="selGroup" style="width:75%;">
+            <select class="custom-select" id="grade">
+                <option value="1학년">1</option>
+                <option value="2학년">2</option>
+                <option value="3학년">3</option>
+            </select>
+            <div class="input-group-append">
+                <label class="input-group-text" for="btnGroup">학년</label>
+            </div>
+            <select class="custom-select" id="class">
+                <option value="1반">1</option>
+                <option value="2반">2</option>
+                <option value="3반">3</option>
+                <option value="4반">4</option>
+                <option value="5반">5</option>
+                <option value="6반">6</option>
+                <option value="7반">7</option>
+                <option value="8반">8</option>
+                <option value="9반">9</option>
+            </select>
+            <div class="input-group-append">
+                <label class="input-group-text" for="btnGroup">반</label>
+            </div>
+        </div>
+    </div>
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; };</script>
+    <!-- 일반 스크립트 선언 -->
     <script src="./libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./libs/swiper/swiper.min.css" crossorigin="anonymous">
     <script src="./libs/swiper/swiper.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./libs/sweetalert2/swal.css">
     <script src="./libs/sweetalert2/sweetalert2.all.min.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+    <script>if (window.module) module = window.module;</script>
+    <!-- 일렉트론 스크립트 선언 -->
+    <script src="./assets/controls/script.js"></script>
+</body>
 
 </html>

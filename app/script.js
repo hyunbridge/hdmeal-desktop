@@ -6,6 +6,7 @@
 // ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
 // Copyright 2019-2020, Hyungyo Seo
 
+// 스와이퍼 정의
 new Swiper('.swiper-container', {
   navigation: { // 네비게이션
     nextEl: '.swiper-button-next', // 오른쪽(다음) 화살표
@@ -65,15 +66,9 @@ function fetchData() {
       }
     }
 
-    if (localStorage.Grade && localStorage.Class) {
-      load("yesterday", "Yesterday", "어제", localStorage.Grade, localStorage.Class);
-      load("today", "Today", "오늘", localStorage.Grade, localStorage.Class);
-      load("tomorrow", "Tomorrow", "내일", localStorage.Grade, localStorage.Class);
-    } else {
-      load("yesterday", "Yesterday", "어제", 1, 1);
-      load("today", "Today", "오늘", 1, 1);
-      load("tomorrow", "Tomorrow", "내일", 1, 1);
-    }
+    load("yesterday", "Yesterday", "어제", userGrade, userClass);
+    load("today", "Today", "오늘", userGrade, userClass);
+    load("tomorrow", "Tomorrow", "내일", userGrade, userClass);
   }).done(function(){
     // 로딩 끝나면 화면전환
     $(".lds-ring").animate(
@@ -115,4 +110,49 @@ function fetchData() {
     });
   });
 }
+
+// 학년/반 정보 불러온 뒤 데이터 로딩 실행
+if (localStorage.Grade && localStorage.Class) {
+  userGrade = localStorage.Grade;
+  userClass = localStorage.Class;
+} else {
+  localStorage.Grade = 1;
+  localStorage.Class = 1;
+  userGrade = 1;
+  userClass = 1;
+}
 fetchData();
+
+// 변경 버튼 클릭했을 시 모달
+const modal = $('#settingsModal').html();
+$('.settingsBtn').click(function(){
+    Swal.fire({
+      title: '학년/반 정보 변경',
+      html: modal,
+      showCancelButton: true,
+      confirmButtonText: "저장",
+      cancelButtonText: "취소",
+      customClass: {
+        confirmButton: 'btn btn-primary btn-lg m-2',
+        cancelButton: 'btn btn-secondary btn-lg m-2'
+      },
+      onBeforeOpen: () => {
+        $(".swal2-content #grade").val(userGrade + "학년").prop("selected", true);
+        $(".swal2-content #class").val(userClass + "반").prop("selected", true);
+      },
+      focusCancel: true,
+      buttonsStyling: false,
+      heightAuto: false,
+      reverseButtons: true
+    }).then(result => {
+      if (result.value) {
+        var selectedGrade = $(".swal2-content #grade option:selected").text();
+        var selectedClass = $(".swal2-content #class option:selected").text();
+        localStorage.Grade = selectedGrade;
+        localStorage.Class = selectedClass;
+        userGrade = selectedGrade;
+        userClass = selectedClass;
+        fetchData();
+      }
+    });
+})
