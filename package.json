@@ -3,60 +3,55 @@
     "productName": "흥덕고 급식",
     "appId": "kr.hdml",
     "asar": true,
-    "mac": {
-      "target": [
-        "default"
-      ],
-      "icon": "./assets/icons/mac/icon.icns"
-    },
-    "dmg": {
-      "title": "흥덕고 급식",
-      "icon": "./assets/icons/mac/Icon.icns"
-    },
     "win": {
       "target": [
-        "zip",
-        "nsis"
+        "nsis-web",
+        "appx"
       ],
       "icon": "./assets/icons/win/Icon.ico"
     },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm",
-        "zip",
-        "tar.gz"
-      ],
-      "icon": "./assets/icons/png/icon.png"
-    },
     "nsis": {
-      "oneClick": true
+      "oneClick": true,
+      "language": 1042
+    },
+    "publish":  { 
+      "provider":"github",
+      "owner":"hgyoseo",
+      "repo":"HDMeal-Windows"
+    },
+    "appx": {
+      "identityName": "11694HGSEO.40629E04BD3CC",
+      "publisher": "CN=EC9A175E-F34C-4868-A7C7-E43F825E418D",
+      "publisherDisplayName": "HGSEO",
+      "applicationId": "kr.hdml",
+      "displayName": "흥덕고 급식",
+      "backgroundColor": "transparent",
+      "languages": [
+        "KO-KR"
+      ]
     },
     "directories": {
-      "buildResources": "resources/installer/",
-      "output": "dist/",
+      "buildResources": "assets",
+      "output": "dist",
       "app": "."
     }
   },
   "name": "HDMeal",
-  "version": "1.2.0",
-  "description": "흥덕고등학교 학생들을 위한 급식 앱",
+  "version": "1.2.5",
+  "description": "용인 흥덕고등학교 학생들을 위한 급식 앱입니다.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:osx": "electron-builder --mac",
-    "build:linux": "npm run build:linux32 && npm run build:linux64",
-    "build:linux32": "electron-builder --linux --ia32",
-    "build:linux64": "electron-builder --linux --x64",
-    "build:win": "npm run build:win32 && npm run build:win64",
-    "build:win32": "electron-builder --win --ia32",
-    "build:win64": "electron-builder --win --x64"
+    "build:all": "npm run build:ia32 && npm run build:x64 && npm run build:arm64",
+    "build:web": "electron-builder --win nsis-web --x64 --ia32",
+    "build:ia32": "electron-builder --win appx --ia32",
+    "build:x64": "electron-builder --win appx --x64",
+    "build:arm64": "electron-builder --win appx --arm64"
   },
   "author": "Hyungyo Seo",
   "license": "MIT",
   "devDependencies": {
     "electron": "^8.2.3",
-    "electron-builder": "^22.5.1"
+    "electron-builder": "^22.6.0"
   }
 }
