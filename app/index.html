@@ -39,7 +39,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <header id="titlebar">
         <div id="drag-region">
 
@@ -79,7 +79,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div id="yesterday">
-                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv swiper-btn-disabled">&lt; 그저께</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next">오늘 &gt;</mark></h1>
 
                     <div class="card-group m-2">
                         <div class="col-lg">
@@ -115,7 +115,7 @@
             </div>
             <div class="swiper-slide">
                 <div id="today">
-                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv">&lt; 어제</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next">내일 &gt;</mark></h1>
 
                     <div class="card-group m-2">
                         <div class="col-lg">
@@ -150,7 +150,7 @@
             </div>
             <div class="swiper-slide">
                 <div id="tomorrow">
-                    <h1 id="date" class="display-5 font-weight-normal m-4">불러오는 중...</h1>
+                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv">&lt; 오늘</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next swiper-btn-disabled">모레 &gt;</mark></h1>
 
                     <div class="card-group m-2">
                         <div class="col-lg">
@@ -185,12 +185,6 @@
             </div>
         </div>
         <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교</p>
-
-        <!-- 네비게이션 지정 -->
-        <div class="swiper-button swiper-button-next"></div>
-        <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button swiper-button-prev"></div>
-        <!-- 이전 버튼 -->
     </div>
     <div id="settingsModal">
         <div class="btn-group btn-group-toggle m-3" data-toggle="buttons" id="selGroup" style="width:75%;">

@@ -23,6 +23,25 @@ ul{
   opacity: 0;
 }
 
+.swiper-btn {
+	font-size: 0.5em;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.swiper-btn-disabled {
+	opacity: 50%;
+	cursor: auto;
+}
+
+mark {
+	font-weight: 700;
+	display: inline-block;
+	line-height: 0em;
+	padding-bottom: 0.5em;
+	background-color: #c2dfff;
+  }
+
 #settingsModal {
 	display: none;
 }
@@ -73,7 +92,7 @@ ul{
 
 @media screen and (min-width: 992px) {
     h1 {
-		padding-left: 0.25em !important;
+		padding-left: 0.8em !important;
     }
 }
 @media screen and (max-width: 991px) {
@@ -84,7 +103,10 @@ ul{
 @media screen and (max-width: 575px) {
     h1 {
 	  font-size: 2rem;
-    }
+	}
+	.swiper-btn {
+		display: none;
+	}
 }
 
 @media (prefers-color-scheme: dark) {

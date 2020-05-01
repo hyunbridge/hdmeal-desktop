@@ -7,10 +7,10 @@
 // Copyright 2019-2020, Hyungyo Seo
 
 // 스와이퍼 정의
-new Swiper('.swiper-container', {
+const navigator = new Swiper('.swiper-container', {
   navigation: { // 네비게이션
-    nextEl: '.swiper-button-next', // 오른쪽(다음) 화살표
-    prevEl: '.swiper-button-prev', // 왼쪽(이전) 화살표
+    nextEl: '.swiper-btn-next', // 오른쪽(다음) 화살표
+    prevEl: '.swiper-btn-priv', // 왼쪽(이전) 화살표
   },
   initialSlide: 1,
 });
@@ -69,7 +69,7 @@ function fetchData() {
     load("yesterday", "Yesterday", "어제", userGrade, userClass);
     load("today", "Today", "오늘", userGrade, userClass);
     load("tomorrow", "Tomorrow", "내일", userGrade, userClass);
-  }).done(function(){
+  }).done(function () {
     // 로딩 끝나면 화면전환
     $(".lds-ring").animate(
       {
@@ -84,8 +84,7 @@ function fetchData() {
       },
       500
     );
-    $(".swiper-button").delay(1000).animate({ opacity: '0' }, 500);
-  }).fail(function(xhr, status, error){
+  }).fail(function (xhr, status, error) {
     console.log(xhr);
     console.log(status);
     console.log(error);
@@ -101,7 +100,7 @@ function fetchData() {
       },
       buttonsStyling: false,
       heightAuto: false,
-      allowEscapeKey : false,
+      allowEscapeKey: false,
       allowOutsideClick: false
     }).then(result => {
       if (result.value) {
@@ -125,34 +124,44 @@ fetchData();
 
 // 변경 버튼 클릭했을 시 모달
 const modal = $('#settingsModal').html();
-$('.settingsBtn').click(function(){
-    Swal.fire({
-      title: '학년/반 정보 변경',
-      html: modal,
-      showCancelButton: true,
-      confirmButtonText: "저장",
-      cancelButtonText: "취소",
-      customClass: {
-        confirmButton: 'btn btn-primary btn-lg m-2',
-        cancelButton: 'btn btn-secondary btn-lg m-2'
-      },
-      onBeforeOpen: () => {
-        $(".swal2-content #grade").val(userGrade + "학년").prop("selected", true);
-        $(".swal2-content #class").val(userClass + "반").prop("selected", true);
-      },
-      focusCancel: true,
-      buttonsStyling: false,
-      heightAuto: false,
-      reverseButtons: true
-    }).then(result => {
-      if (result.value) {
-        var selectedGrade = $(".swal2-content #grade option:selected").text();
-        var selectedClass = $(".swal2-content #class option:selected").text();
-        localStorage.Grade = selectedGrade;
-        localStorage.Class = selectedClass;
-        userGrade = selectedGrade;
-        userClass = selectedClass;
-        fetchData();
-      }
-    });
+$('.settingsBtn').click(function () {
+  Swal.fire({
+    title: '학년/반 정보 변경',
+    html: modal,
+    showCancelButton: true,
+    confirmButtonText: "저장",
+    cancelButtonText: "취소",
+    customClass: {
+      confirmButton: 'btn btn-primary btn-lg m-2',
+      cancelButton: 'btn btn-secondary btn-lg m-2'
+    },
+    onBeforeOpen: () => {
+      $(".swal2-content #grade").val(userGrade + "학년").prop("selected", true);
+      $(".swal2-content #class").val(userClass + "반").prop("selected", true);
+    },
+    focusCancel: true,
+    buttonsStyling: false,
+    heightAuto: false,
+    reverseButtons: true
+  }).then(result => {
+    if (result.value) {
+      var selectedGrade = $(".swal2-content #grade option:selected").text();
+      var selectedClass = $(".swal2-content #class option:selected").text();
+      localStorage.Grade = selectedGrade;
+      localStorage.Class = selectedClass;
+      userGrade = selectedGrade;
+      userClass = selectedClass;
+      fetchData();
+    }
+  });
 })
+
+// 단축키 할당
+$('body').keydown(function (e) {
+  if (e.which == 37) {  // ArrowLeft
+    navigator.slidePrev();
+  }
+  if (e.which == 39) {  // ArrowRight
+    navigator.slideNext();
+  }
+});

@@ -16,7 +16,7 @@
     },
     "publish":  { 
       "provider":"github",
-      "owner":"hgyoseo",
+      "owner":"HDMeal",
       "repo":"HDMeal-Windows"
     },
     "appx": {
@@ -37,16 +37,14 @@
     }
   },
   "name": "HDMeal",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "description": "용인 흥덕고등학교 학생들을 위한 급식 앱입니다.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:all": "npm run build:ia32 && npm run build:x64 && npm run build:arm64",
-    "build:web": "electron-builder --win nsis-web --x64 --ia32",
-    "build:ia32": "electron-builder --win appx --ia32",
-    "build:x64": "electron-builder --win appx --x64",
-    "build:arm64": "electron-builder --win appx --arm64"
+    "build": "npm run build:web && npm run build:appx",
+    "build:web": "electron-builder --win nsis-web --x64 --ia32 --arm64",
+    "build:appx": "electron-builder --win appx --ia32 --x64 --arm64"
   },
   "author": "Hyungyo Seo",
   "license": "MIT",
