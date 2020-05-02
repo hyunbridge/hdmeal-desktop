@@ -11,16 +11,17 @@
 body {
 	background-color: #f5f5f5;
 	font-family: 'Spoqa Han Sans', sans-serif;
+	transition: all 0.5s ease;
 }
 
-ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .swiper-container {
-  opacity: 0;
+	opacity: 0;
 }
 
 .swiper-btn {
@@ -40,14 +41,14 @@ mark {
 	line-height: 0em;
 	padding-bottom: 0.5em;
 	background-color: #c2dfff;
-  }
+}
 
 #settingsModal {
 	display: none;
 }
 
 .lds-ring {
-  display: inline-block;
+	display: inline-block;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -91,18 +92,20 @@ mark {
 }
 
 @media screen and (min-width: 992px) {
-    h1 {
+	h1 {
 		padding-left: 0.8em !important;
-    }
+	}
 }
+
 @media screen and (max-width: 991px) {
-    h1 {
-	  text-align: center;
-    }
+	h1 {
+		text-align: center;
+	}
 }
+
 @media screen and (max-width: 575px) {
-    h1 {
-	  font-size: 2rem;
+	h1 {
+		font-size: 2rem;
 	}
 	.swiper-btn {
 		display: none;
@@ -110,19 +113,23 @@ mark {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-  	background-color: #161616;
-    color: #f5f5f5;
-  }
-  .card {
-    background-color: #202020;
-  }
-  .textOnly, .textOnly:hover {
-	color: #f5f5f5;
-}
-.input-group-text, .custom-select {
-	background-color: #202020;
-color: #f5f5f5;
-	border: 1px solid #353535;
-}
+	body {
+		background-color: #161616;
+		color: #f5f5f5;
+	}
+	.card {
+		background-color: #202020;
+	}
+	.textOnly, .textOnly:hover {
+		color: #f5f5f5;
+	}
+	.input-group-text, .custom-select {
+		background-color: #202020;
+		color: #f5f5f5;
+		border: 1px solid #353535;
+	}
+	mark {
+		color: #f5f5f5;
+		background-color: #007bff;
+	}
 }
