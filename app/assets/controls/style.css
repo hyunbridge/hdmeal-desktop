@@ -2,7 +2,7 @@
 /* Styling of window frame and titlebar */
 
 #titlebar {
-	display: block;
+	display: none;
 	position: fixed;
 	height: 32px;
 	width: 100%;
