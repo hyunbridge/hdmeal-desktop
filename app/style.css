@@ -12,6 +12,7 @@ body {
 	background-color: #f5f5f5;
 	font-family: 'Spoqa Han Sans', sans-serif;
 	transition: all 0.5s ease;
+	overflow-y: hidden;
 }
 
 ul {
@@ -21,7 +22,9 @@ ul {
 }
 
 .swiper-container {
+	visibility: hidden;
 	opacity: 0;
+	height: 100vh;
 }
 
 .swiper-btn {
@@ -43,7 +46,7 @@ mark {
 	background-color: #c2dfff;
 }
 
-#settingsModal {
+.hidden {
 	display: none;
 }
 

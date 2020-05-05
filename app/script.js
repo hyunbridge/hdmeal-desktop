@@ -78,6 +78,7 @@ function fetchData() {
       500
     );
     $(".lds-ring").remove();
+    $(".swiper-container").css({'visibility': 'visible', 'overflow-y': 'auto'});
     $(".swiper-container").animate(
       {
         opacity: "1"
@@ -123,11 +124,11 @@ if (localStorage.Grade && localStorage.Class) {
 fetchData();
 
 // 변경 버튼 클릭했을 시 모달
-const modal = $('#settingsModal').html();
+const settingsModal = $('#settingsModal').html();
 $('.settingsBtn').click(function () {
   Swal.fire({
     title: '학년/반 정보 변경',
-    html: modal,
+    html: settingsModal,
     showCancelButton: true,
     confirmButtonText: "저장",
     cancelButtonText: "취소",
@@ -153,6 +154,20 @@ $('.settingsBtn').click(function () {
       userClass = selectedClass;
       fetchData();
     }
+  });
+})
+
+// 정보 버튼 클릭했을 시 모달
+$('#infoBtn').click(function () {
+  Swal.fire({
+    title: '흥덕고 급식',
+    html: $('#infoModal').html(),
+    confirmButtonText: "닫기",
+    customClass: {
+      confirmButton: 'btn btn-primary btn-lg m-2',
+    },
+    buttonsStyling: false,
+    heightAuto: false
   });
 })
 

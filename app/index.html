@@ -184,9 +184,9 @@
                 </div>
             </div>
         </div>
-        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교</p>
+        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교<a id="infoBtn"href="#" class="m-1">정보</a></p>
     </div>
-    <div id="settingsModal">
+    <div id="settingsModal" class="hidden">
         <div class="btn-group btn-group-toggle m-3" data-toggle="buttons" id="selGroup" style="width:75%;">
             <select class="custom-select" id="grade">
                 <option value="1학년">1</option>
@@ -212,6 +212,11 @@
             </div>
         </div>
     </div>
+    <div id="infoModal" class="hidden">
+        버전: <span id="version"></span><br/>
+        Electron 버전: <span id="electronVersion"></span><br/>
+        자동 업데이트: <span id="autoUpdate""></span>
+    </div>
     <script>if (typeof module === 'object') { window.module = module; module = undefined; };</script>
     <!-- 일반 스크립트 선언 -->
     <script src="./libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
@@ -223,6 +228,7 @@
     <script>if (window.module) module = window.module;</script>
     <!-- 일렉트론 스크립트 선언 -->
     <script src="./assets/controls/script.js"></script>
+    <script src="./renderer.js"></script>
 </body>
 
 </html>
