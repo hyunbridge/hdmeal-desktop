@@ -1,3 +1,6 @@
+// 직접 빌드해서 사용하는 경우, 아래 값 변경
+const MSStoreIdentityName = '11694HGSEO.40629E04BD3CC'
+
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
 const { autoUpdater } = require("electron-updater")
@@ -8,7 +11,7 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     title: '흥덕고 급식',
     frame: (process.platform !== 'win32'),  // Windows에서만 프레임 없는 창을 열고, 창 컨트롤 버튼은 직접 구현
-    titleBarStyle: 'hidden-inset',  // macOS에서만 타이틀 없는 창 실행
+    titleBarStyle: 'hidden',  // macOS에서만 타이틀 없는 창 실행
     width: 1200,
     height: 800,
     minWidth: 400,
@@ -50,8 +53,9 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+// process.windowsStore가 제대로 작동하지 않아 workaround 사용
 const isMacAppStoreApp = process.mas
-const isMicrosoftStoreApp = process.windowsStore
+const isMicrosoftStoreApp = process.platform == 'win32' && process.resourcesPath.includes(MSStoreIdentityName)
 const isSnapStoreApp = process.platform == 'linux' && process.resourcesPath.includes('snap')
-const isUpdateChkEnabled =  process.argv.includes('--no-update-check')
-if (!(isMacAppStoreApp || isMicrosoftStoreApp || isSnapStoreApp || isUpdateChkEnabled)) autoUpdater.checkForUpdates()
+const isUpdateChkDisabled =  process.argv.includes('--no-update-check')
+if (!(isMacAppStoreApp || isMicrosoftStoreApp || isSnapStoreApp || isUpdateChkDisabled)) autoUpdater.checkForUpdates()

@@ -10,8 +10,9 @@ if (process.platform == 'win32') {  // Windows 전용
             handleWindowControls();
             // 일단은 Timeout후 보여지도록 해 놓았음
             // TODO: 의도치 않은 애니메이션 동작 하는 이유 확인 후 해결하기
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementById('titlebar').style.display = 'block';
+
             }, 300);
         }
     };
@@ -54,4 +55,11 @@ if (process.platform == 'win32') {  // Windows 전용
             }
         }
     }
+} else if (process.platform == 'darwin') {
+    document.onreadystatechange = (event) => {
+        if (document.readyState == "complete") {
+            document.getElementById('titlebar').style.display = 'block';
+            document.getElementById('window-controls').style.display = 'none';
+        }
+    };
 }
