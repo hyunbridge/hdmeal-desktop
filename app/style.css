@@ -46,6 +46,10 @@ mark {
 	background-color: #c2dfff;
 }
 
+.card-body li {
+	margin-bottom: 0.5em;
+}
+
 .hidden {
 	display: none;
 }
