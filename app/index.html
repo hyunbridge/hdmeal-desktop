@@ -77,114 +77,50 @@
     </div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div id="yesterday">
-                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv swiper-btn-disabled">&lt; 그저께</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next">오늘 &gt;</mark></h1>
+            <!-- Slides -->
+        </div>
+        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교<a id="infoBtn" href="#" class="m-1">정보</a>
+        </p>
+    </div>
+    <!-- Boilerplate -->
+    <div class="hidden" id="hdm-slide">
+        <div class="body">
+            <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv"
+                    onclick="navigator_.slidePrev();">&lt;
+                    이전</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next"
+                    onclick="navigator_.slideNext();">다음
+                    &gt;</mark></h1>
 
-                    <div class="card-group m-2">
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="menuTitle" class="card-title">급식</h5>
-                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
-                                    </div>
-                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
-                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div id="today">
-                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv">&lt; 어제</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next">내일 &gt;</mark></h1>
-
-                    <div class="card-group m-2">
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="menuTitle" class="card-title">급식</h5>
-                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
-                                    </div>
-                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
-                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
+            <div class="card-group m-2">
+                <div class="col-lg">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h5 id="menuTitle" class="card-title">급식</h5>
+                            <ul id="menuBody" class="card-text">불러오는 중...</ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div id="tomorrow">
-                    <h1 class="col display-5 font-weight-normal mt-4"><mark class="swiper-btn swiper-btn-priv">&lt; 오늘</mark><span id="date" class="m-2">불러오는 중...</span><mark class="swiper-btn swiper-btn-next swiper-btn-disabled">모레 &gt;</mark></h1>
-
-                    <div class="card-group m-2">
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="menuTitle" class="card-title">급식</h5>
-                                    <ul id="menuBody" class="card-text">불러오는 중...</ul>
-                                </div>
+                <div class="col-lg">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <div class="row">
+                                <h5 id="ttTitle" class="col card-title">시간표</h5>
+                                <a href="#" class="col-3 text-right settingsBtn">변경</a>
                             </div>
+                            <ul id="ttBody" class="card-text">불러오는 중...</ul>
                         </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <h5 id="ttTitle" class="col card-title">시간표</h5>
-                                        <a href="#" class="col-3 text-right settingsBtn">변경</a>
-                                    </div>
-                                    <ul id="ttBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg">
-                            <div class="card m-2">
-                                <div class="card-body">
-                                    <h5 id="schdlTitle" class="card-title">학사일정</h5>
-                                    <ul id="schdlBody" class="card-text">불러오는 중...</ul>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h5 id="schdlTitle" class="card-title">학사일정</h5>
+                            <ul id="schdlBody" class="card-text">불러오는 중...</ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="text-muted text-center fixed-bottom">&copy; 2019-2020 서현교<a id="infoBtn"href="#" class="m-1">정보</a></p>
     </div>
     <div id="settingsModal" class="hidden">
         <div class="btn-group btn-group-toggle m-3" data-toggle="buttons" id="selGroup" style="width:75%;">
@@ -213,22 +149,22 @@
         </div>
     </div>
     <div id="infoModal" class="hidden">
-        버전: <span id="version"></span><br/>
-        Electron 버전: <span id="electronVersion"></span><br/>
+        버전: <span id="version"></span><br />
+        Electron 버전: <span id="electronVersion"></span><br />
         자동 업데이트: <span id="autoUpdate""></span>
     </div>
     <script>if (typeof module === 'object') { window.module = module; module = undefined; };</script>
     <!-- 일반 스크립트 선언 -->
-    <script src="./libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./libs/swiper/swiper.min.css" crossorigin="anonymous">
-    <script src="./libs/swiper/swiper.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./libs/sweetalert2/swal.css">
-    <script src="./libs/sweetalert2/sweetalert2.all.min.js" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
-    <script>if (window.module) module = window.module;</script>
-    <!-- 일렉트론 스크립트 선언 -->
-    <script src="./assets/controls/script.js"></script>
-    <script src="./renderer.js"></script>
+    <script src=" ./libs/jquery/jquery.min.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="./libs/swiper/swiper.min.css" crossorigin="anonymous">
+            <script src="./libs/swiper/swiper.min.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="./libs/sweetalert2/swal.css">
+            <script src="./libs/sweetalert2/sweetalert2.all.min.js" crossorigin="anonymous"></script>
+            <script src="./script.js"></script>
+            <script>if (window.module) module = window.module;</script>
+            <!-- 일렉트론 스크립트 선언 -->
+            <script src="./assets/controls/script.js"></script>
+            <script src="./renderer.js"></script>
 </body>
 
 </html>
