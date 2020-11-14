@@ -19,7 +19,8 @@ function createWindow() {
     backgroundColor: '#f5f5f5',
     icon: path.join(__dirname, '/assets/icons/png/512x512.png'),
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
 

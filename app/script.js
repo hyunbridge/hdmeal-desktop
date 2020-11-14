@@ -6,10 +6,14 @@
 // ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
 // Copyright 2019-2020, Hyungyo Seo
 
-let today = new Date();
 const Week_KO = ['일', '월', '화', '수', '목', '금', '토']
 const navigator_ = new Swiper('.swiper-container');
 const settingsModal = $('#settingsModal').html();
+let today = new Date();
+let yeasterday = new Date();
+yeasterday.setDate(today.getDate() - 1);
+let tomorrow = new Date();
+tomorrow.setDate(today.getDate() + 1);
 
 // ISO Format 날짜 변환
 function ISODate(date) {
@@ -105,6 +109,9 @@ function write(data, index) {
     }
     $("#" + 'hdm-slide_' + keys[0] + " .swiper-btn-priv").addClass('swiper-btn-disabled')
     $("#" + 'hdm-slide_' + keys[keys.length - 1] + " .swiper-btn-next").addClass('swiper-btn-disabled')
+    $("#" + 'hdm-slide_' + ISODate(yeasterday) + " #date").prepend('어제, ')
+    $("#" + 'hdm-slide_' + ISODate(today) + " #date").prepend('오늘, ')
+    $("#" + 'hdm-slide_' + ISODate(tomorrow) + " #date").prepend('내일, ')
     // 변경 버튼 클릭했을 시 모달
     $('.settingsBtn').click(function () {
       Swal.fire({

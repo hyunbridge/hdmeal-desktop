@@ -56,7 +56,7 @@
     }
   },
   "name": "HDMeal",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "용인 흥덕고등학교 학생들을 위한 급식 앱입니다.",
   "homepage": "https://hdml.kr/",
   "main": "main.js",
@@ -67,9 +67,8 @@
     "build:exe": "electron-builder --win nsis-web --x64 --ia32 --arm64",
     "build:appx": "electron-builder --win appx --ia32 --x64 --arm64",
     "build:mac": "electron-builder --mac dmg",
-    "build:linux": "npm run build:appimg && npm run build:deb",
+    "build:linux": "npm run build:appimg",
     "build:appimg": "electron-builder --linux AppImage --ia32 --x64 --arm64",
-    "build:deb": "electron-builder --linux deb --ia32 --x64 --arm64",
     "build:test": "electron-builder --win nsis"
   },
   "author": {
@@ -78,10 +77,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^8.5.2",
-    "electron-builder": "^22.6.0"
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
   },
   "dependencies": {
-    "electron-updater": "^4.3.1"
+    "electron-updater": "^4.3.5"
   }
 }
