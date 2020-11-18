@@ -8,12 +8,7 @@ if (process.platform == 'win32') {  // Windows 전용
     document.onreadystatechange = (event) => {
         if (document.readyState == "complete") {
             handleWindowControls();
-            // 일단은 Timeout후 보여지도록 해 놓았음
-            // TODO: 의도치 않은 애니메이션 동작 하는 이유 확인 후 해결하기
-            setTimeout(function () {
-                document.getElementById('titlebar').style.display = 'block';
-
-            }, 300);
+            document.getElementById('titlebar').style.display = 'block';
         }
     };
 
@@ -39,7 +34,7 @@ if (process.platform == 'win32') {  // Windows 전용
         });
 
         document.getElementById('close-button').addEventListener("click", event => {
-            win.close();
+            win.destroy();
         });
 
         // Toggle maximise/restore buttons when maximisation/unmaximisation occurs

@@ -40,6 +40,9 @@
 	top: 0;
 	right: 0;
 	height: 100%;
+	transition: all 0.5s ease;
+	background-color: rgba(22, 22, 22, .75);
+	backdrop-filter: blur(5px);
 }
 
 #window-controls {
@@ -125,6 +128,9 @@
 	}
 	#close-button:active .icon {
 		filter: invert(1);
+	}
+	#window-controls {
+		background-color: rgba(245, 245, 245, .75);
 	}
 	#window-controls .button:hover {
 		background: rgba(0, 0, 0, 0.1);
