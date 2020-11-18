@@ -1,0 +1,47 @@
+/*
+ ██╗  ██╗██████╗ ███╗   ███╗███████╗ █████╗ ██╗
+ ██║  ██║██╔══██╗████╗ ████║██╔════╝██╔══██╗██║
+ ███████║██║  ██║██╔████╔██║█████╗  ███████║██║
+ ██╔══██║██║  ██║██║╚██╔╝██║██╔══╝  ██╔══██║██║
+ ██║  ██║██████╔╝██║ ╚═╝ ██║███████╗██║  ██║███████╗
+ ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+ Copyright 2019-2020, Hyungyo Seo
+*/
+
+.swiper-container::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+	height: 7px;
+	left:-100px;
+}
+  .swiper-container::-webkit-scrollbar-track {
+    background-color: inherit;
+}
+  .swiper-container::-webkit-scrollbar-thumb {
+    max-height: 100px;
+    border-radius: 3px;
+    background-color: rgba(1, 1, 1, 0.23);
+}
+  .swiper-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(1, 1, 1, 0.35);
+}
+  .swiper-container::-webkit-scrollbar-thumb:active {
+    background-color: rgba(1, 1, 1, 0.48);
+}
+  .swiper-container::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+}
+
+@media (prefers-color-scheme: dark) {
+	.swiper-container::-webkit-scrollbar-thumb {
+		max-height: 100px;
+		border-radius: 3px;
+		background-color: rgba(254, 254, 254, 0.23);
+	}
+	  .swiper-container::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(254, 254, 254, 0.35);
+	}
+	  .swiper-container::-webkit-scrollbar-thumb:active {
+		background-color: rgba(254, 254, 254, 0.48);
+	}
+}
