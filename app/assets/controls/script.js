@@ -34,7 +34,7 @@ if (process.platform == 'win32') {  // Windows 전용
         });
 
         document.getElementById('close-button').addEventListener("click", event => {
-            win.destroy();
+            win.close();
         });
 
         // Toggle maximise/restore buttons when maximisation/unmaximisation occurs
