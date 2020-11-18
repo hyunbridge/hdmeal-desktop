@@ -61,7 +61,7 @@
   "homepage": "https://hdml.kr/",
   "main": "main.js",
   "scripts": {
-    "start": "electron . --no-update-check",
+    "start": "electron . --dev --no-update-check",
     "build": "npm run build:win && npm run build:mac && npm run build:linux",
     "build:win": "npm run build:exe && npm run build:appx",
     "build:exe": "electron-builder --win nsis-web --x64 --ia32 --arm64",
